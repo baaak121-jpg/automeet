@@ -14,8 +14,10 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-  # 함수 최대 실행 시간: 26초 (Netlify 무료 플랜 기본)
-  # 긴 회의 지원 시 Background Functions로 전환 필요
+  included_files = ["netlify/functions/**"]
+
+[functions."meeting-notes"]
+  timeout = 26
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
